@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+import dummyData from './Api'
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <table className='table' >
+        <tr >
+          <th>Invoice Number</th>
+          <th>Company Name</th>
+          <th>Invoice Date</th>
+          <th>Total Bill</th>
+        </tr>
+        {
+          dummyData.map((data) => <>
+            <tr>
+              <td key={data.InvoiceNumber}>{data.InvoiceNumber}</td>
+              <td key={data.InvoiceNumber}>{data.CompanyName}</td>
+              <td key={data.InvoiceNumber}>{data.InvoiceDate}</td>
+              <td key={data.InvoiceNumber}> {data.TotalBill}</td>
+            </tr>
+          </>
+          )
+        }
+
+      </table>
+    </div >
   );
 }
 
